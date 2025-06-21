@@ -9,9 +9,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Hi, I'm <span className="text-gray-300 group-hover:animate-title">Kumar Gaurav</span>
         </h1>
-        <h2 className="text-2xl font-semibold text-gray-200 mb-4">
-          Computer Science Student
-        </h2>
+        
         <p className="text-lg text-gray-300 mb-2">
         Driven and detail-oriented Computer Science student with a passion for transforming complex problems into elegant data-driven solutions. A fast learner who thrives in collaborative environments, eagerly embracing new challenges and continuously sharpening skills through self-directed learning and innovative projects.
         </p>
