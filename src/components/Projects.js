@@ -3,6 +3,17 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "Weather Data Analysis",
+    date: "July 2025",
+    image: require("../assets/weather.png"),
+    description:
+      "This Power BI Weather Data Analysis Dashboard is an interactive project where I extracted both current and forecasted weather data using a Weather API to visualize key metrics like temperature, humidity, rainfall, and wind speed. It was created as part of a task by Pianalytix Pvt. Ltd. to showcase my skills in real-time data integration, transformation, and visual storytelling. The dashboard features dynamic KPIs, trend charts, and filters for location and time, enabling users to explore meaningful insights and compare actual vs predicted weather patterns in a clean and intuitive interface.",
+    technologies: ["Weather API", "Power BI", "DAX"],
+    github: "https://github.com/1415-da/Weather-Data-Analysis",
+    demo: "#",
+    blog: "#",
+  },
+  {
     title: "Text Summarizer Web App",
     date: "June 2025",
     image: require("../assets/TextSummarizer.png"),
@@ -43,7 +54,7 @@ const projects = [
       "Built an end-to-end web app that provides personalized workout plans, nutrition tips, and progress tracking using a trained ML model. Developed the backend with Flask to process user inputs and generate dynamic fitness recommendations using Scikit-learn. Crafted a dynamic and responsive front-end using Tailwind CSS and Jinja2 templates, seamlessly integrating progress charts for clear and engaging user insights.",
     technologies: ["Python", "Flask", "Tailwind CSS", "Scikit-learn"],
     github: "https://github.com/1415-da/Fitness-WebApp",
-    demo: "#",
+    demo: "https://fitness-web-app-bag1.vercel.app/",
     blog: "#",
   },
   {
@@ -54,16 +65,6 @@ const projects = [
       "Built a loan approval prediction system by cleaning and preprocessing data with Pandas, training a classification model using Scikit-learn, and optimizing it with performance metrics and hyperparameter tuning. Developed and deployed a lightweight Flask web app with an intuitive HTML/CSS front-end, enabling real-time predictions based on user input with 80% accuracy. Integrated the complete pipeline from data processing to model inference, demonstrating the ability to merge data science with web development effectively.",
     technologies: ["Python", "Scikit-learn", "Flask", "HTML/CSS"],
     github: "https://github.com/1415-da/Loan_Approval_Prediction",
-    demo: "#",
-    blog: "#",
-  },
-  {
-    title: "T20 World Cup Data Analysis – Dream XI Project",
-    date: "Jan 2025",
-    image: require("../assets/T20 analysis.png"),
-    description:
-      "Collected and cleaned match and player data through web scraping and Pandas to analyze batting, bowling, and fielding performance across multiple datasets. Calculated custom metrics (e.g., strike rate, economy, averages) and built interactive Power BI dashboards to rank players and present a data-driven Dream XI. Gained hands-on experience in the full data analysis lifecycle—from scraping and transformation to insight generation and visualization.",
-    technologies: ["Python", "Pandas", "Power BI", "Web Scraping"],
     demo: "#",
     blog: "#",
   },
