@@ -25,13 +25,19 @@ export default function ProjectCard({ title, date, image, video, description, te
       </div>
       <div className="mt-auto flex gap-4">
         {github && (
-          <a href={github} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">GitHub</a>
+          <a href={github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-blue-400 font-semibold rounded shadow hover:bg-blue-800 transition-colors border border-blue-700">
+            <i className="fab fa-github"></i>
+            GitHub
+          </a>
         )}
-        {/* Hide demo and blog links on mobile */}
+        {demo && demo !== "#" && (
+          <a href={demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-green-900 text-green-400 font-semibold rounded shadow hover:bg-green-800 transition-colors border border-green-700">
+            <i className="fas fa-external-link-alt"></i>
+            Demo
+          </a>
+        )}
+        {/* Hide blog link on mobile */}
         <span className="hidden md:flex gap-4">
-          {demo && demo !== "#" && (
-            <a href={demo} target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">Live Demo</a>
-          )}
           {blog && blog !== "#" && (
             <a href={blog} target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:underline">Blog</a>
           )}
