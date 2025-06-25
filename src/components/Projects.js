@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 const projects = [
   {
     title: "Weather Data Analysis",
-    date: "July 2025",
+    date: "June 2025",
     image: require("../assets/weather.png"),
     description:
       "This Power BI Weather Data Analysis Dashboard is an interactive project where I extracted both current and forecasted weather data using a Weather API to visualize key metrics like temperature, humidity, rainfall, and wind speed. It was created as part of a task by Pianalytix Pvt. Ltd. to showcase my skills in real-time data integration, transformation, and visual storytelling. The dashboard features dynamic KPIs, trend charts, and filters for location and time, enabling users to explore meaningful insights and compare actual vs predicted weather patterns in a clean and intuitive interface.",
