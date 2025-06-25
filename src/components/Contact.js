@@ -84,6 +84,9 @@ export default function Contact() {
               <a href="https://github.com/1415-da" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" className="text-gray-100 hover:text-gray-400">
                 <i className="fab fa-github"></i>
               </a>
+              <a href="https://x.com/kg15072004" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" className="text-gray-100 hover:text-gray-400">
+                <i className="fab fa-twitter"></i>
+              </a>
             </div>
           </div>
         </div>
