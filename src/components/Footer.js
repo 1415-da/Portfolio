@@ -9,8 +9,6 @@ export default function Footer() {
         <a href="#projects" className="hover:underline">Projects</a>
         <a href="#skills" className="hover:underline">Skills</a>
         <a href="#contact" className="hover:underline">Contact</a>
-        <a href="https://www.linkedin.com/in/kumar-gaurav-5bb64728a/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
-        <a href="https://github.com/1415-da" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
       </nav>
     </footer>
   );
