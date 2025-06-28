@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 const projects = [
   {
     title: "Weather Data Analysis",
-    date: "June 2025",
+    date: "July 2025",
     image: require("../assets/weather.png"),
     description:
       "This Power BI Weather Data Analysis Dashboard is an interactive project where I extracted both current and forecasted weather data using a Weather API to visualize key metrics like temperature, humidity, rainfall, and wind speed. It was created as part of a task by Pianalytix Pvt. Ltd. to showcase my skills in real-time data integration, transformation, and visual storytelling. The dashboard features dynamic KPIs, trend charts, and filters for location and time, enabling users to explore meaningful insights and compare actual vs predicted weather patterns in a clean and intuitive interface.",
@@ -14,14 +14,14 @@ const projects = [
     blog: "#",
   },
   {
-    title: "Text Summarizer Web App",
+    title: "Credit Scoring Web App",
     date: "June 2025",
-    image: require("../assets/TextSummarizer.png"),
+    image: require("../assets/creditScore.png"),
     description:
-      "This web application, developed using Streamlit, leverages AI to generate concise summaries of lengthy texts. It utilizes the BART model for text summarization and includes an interactive slider that allows users to adjust the desired summary length. To enhance the user experience, the app provides summary statistics such as word count and compression ratio. It also supports the processing of long texts through intelligent chunking and offers a modern, user-friendly interface for seamless interaction.",
-    technologies: ["Python 3.7+", "Streamlit", "NLTK", "Transformers","PyTorch"],
-    github: "https://github.com/1415-da/Text_Summarizer",
-    demo: "#",
+      "Built a professional banking application with Ml-powered credit scoring using React.js and Python Flask. The app features an interactive credit score gauge, analysis of 27 financial metrics, real-time risk assessment, and a sleek dark theme UI. Powered by machine learning, it showcases full-stack development, fintech-focused UX/UI design, and seamless integration of frontend animations with backend intelligence. Users receive dynamic risk insights based on financial behavior, enabling smarter lending decisions. This project demonstrates advanced skills in data visualization, and responsive fintech application design.",
+    technologies: ["Flask", "React.js", "Scikit-learn", "Pandas","NumPy","Joblib", "Jupyter Notebook"],
+    github: "https://github.com/1415-da/Credit_Scoring",
+    demo: "https://credit-scoring-6ydz.vercel.app/",
     blog: "#",
   },
   {
@@ -32,7 +32,7 @@ const projects = [
       "This Streamlit application offers comprehensive celebrity information powered by Groq's LLaMA3 70B model through LangChain integration. Users can search for any celebrity and receive AI-generated insights including a detailed biography, date of birth, significant historical events around their birth, notable awards and recognitions, estimated net worth, and social media presence. The app features a clean and interactive UI with expandable sections for organized content display. It employs multi-step sequential prompting using LangChain chains.",
     technologies: ["Python 3.8+", "Streamlit", "GROQ API Key","LangChain"],
     github: "https://github.com/1415-da/Celebrity_Search",
-    demo: "#",
+    demo: "https://celebritysearch-co4ehtucxzb7aucw2gz8x5.streamlit.app/",
     blog: "#",
   },
   {
