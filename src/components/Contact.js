@@ -1,96 +1,135 @@
 import React, { useState } from "react";
 
-export default function Contact() {
+const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
     setForm({ name: '', email: '', message: '' });
     // Here you would typically send the form data to a backend or email service
-  }
+  };
 
   return (
-    <section id="contact" className="group w-full min-h-screen flex flex-col justify-center items-center px-8 py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-      <div className="w-full max-w-4xl">
-        <h2 className="section-title group-hover:animate-title text-3xl font-bold text-white mb-6 text-center">Contact Me</h2>
-        <div className="flex flex-col md:flex-row gap-12">
+    <div className="max-w-2xl mx-auto">
+      {/* Contact Form */}
+      <div className="bg-[#222222] rounded-xl p-8 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300" data-aos="fade-up">
           {!submitted ? (
-            <form
-              className="flex-1 space-y-4"
-              onSubmit={handleSubmit}
-              autoComplete="off"
-            >
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="w-full px-4 py-2 bg-gray-800 text-gray-100 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-                aria-label="Your Name"
-              />
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Your Email"
-                className="w-full px-4 py-2 bg-gray-800 text-gray-100 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-                aria-label="Your Email"
-              />
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Your Message"
-                className="w-full px-4 py-2 bg-gray-800 text-gray-100 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                rows={5}
-                required
-                aria-label="Your Message"
-              />
-              <button
-                type="submit"
-                className="px-6 py-2 bg-gradient-to-r from-white via-gray-300 to-gray-500 text-gray-900 font-bold rounded-xl shadow-lg border-2 border-gray-700 hover:from-gray-700 hover:to-gray-900 hover:text-white hover:scale-105 transition-all duration-300"
-              >
-                Send Message
-              </button>
-            </form>
+            <>
+              <h2 className="text-2xl font-bold text-[#FFD600] mb-6">Get In Touch</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name and Email - Side by side on desktop, stacked on mobile */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-[#f5f5f5] mb-2">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      className="w-full px-4 py-3 bg-[#181818] text-[#f5f5f5] border border-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD600] focus:border-transparent transition-all duration-300 placeholder-[#666666] shadow-sm"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-[#f5f5f5] mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email address"
+                      className="w-full px-4 py-3 bg-[#181818] text-[#f5f5f5] border border-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD600] focus:border-transparent transition-all duration-300 placeholder-[#666666] shadow-sm"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                {/* Message Textarea */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-[#f5f5f5] mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project or inquiry..."
+                    className="w-full px-4 py-3 bg-[#181818] text-[#f5f5f5] border border-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD600] focus:border-transparent transition-all duration-300 resize-none placeholder-[#666666] shadow-sm"
+                    rows={6}
+                    required
+                  />
+                </div>
+                
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-[#FFD600] text-[#1f1f1f] font-semibold rounded-lg hover:bg-[#FFE033] hover:shadow-lg hover:shadow-[#FFD600]/25 transition-all duration-300 flex items-center justify-center gap-2 group ripple"
+                  style={{ overflow: 'hidden', position: 'relative' }}
+                  onClick={(e) => {
+                    const button = e.currentTarget;
+                    const circle = document.createElement('span');
+                    const diameter = Math.max(button.clientWidth, button.clientHeight);
+                    const radius = diameter / 2;
+                    circle.style.width = circle.style.height = `${diameter}px`;
+                    circle.style.left = `${e.clientX - button.getBoundingClientRect().left - radius}px`;
+                    circle.style.top = `${e.clientY - button.getBoundingClientRect().top - radius}px`;
+                    circle.classList.add('ripple-effect');
+                    button.appendChild(circle);
+                    setTimeout(() => circle.remove(), 600);
+                  }}
+                >
+                  <span>Send Message</span>
+                  <svg 
+                    className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" 
+                    />
+                  </svg>
+                </button>
+              </form>
+            </>
           ) : (
-            <div className="flex-1 flex flex-col justify-center items-center">
-              <p className="text-green-400 text-xl mt-2">Thank you! I'll get back to you soon.</p>
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-[#FFD600] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-[#1f1f1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#FFD600] mb-2">Message Sent!</h3>
+              <p className="text-[#f5f5f5]">Thank you! I'll get back to you soon.</p>
+              <button
+                onClick={() => setSubmitted(false)}
+                className="mt-4 px-4 py-2 bg-[#333333] text-[#f5f5f5] rounded-lg hover:bg-[#444444] transition-colors duration-200"
+              >
+                Send Another Message
+              </button>
             </div>
           )}
-          <div className="flex-1 flex flex-col gap-4">
-            <span className="text-gray-200 font-medium">Phone: 08766313590</span>
-            <a
-              href="mailto:kg15072004@gmail.com"
-              className="text-blue-400 hover:underline"
-              aria-label="Email"
-            >
-              kg15072004@gmail.com
-            </a>
-            <div className="flex gap-4 text-2xl mt-2">
-              <a href="https://www.linkedin.com/in/kumar-gaurav-5bb64728a/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn" className="text-blue-400 hover:text-blue-300">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/1415-da" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" className="text-gray-100 hover:text-gray-400">
-                <i className="fab fa-github"></i>
-              </a>
-              <a href="https://x.com/kg15072004" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub" className="text-gray-100 hover:text-gray-400">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
   );
-}
+};
+
+export default Contact;
