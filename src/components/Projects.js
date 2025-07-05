@@ -85,7 +85,7 @@ const Projects = ({ hideDescriptionOnMobile = false }) => {
       </div>
 
       {/* Project Stats */}
-      <div className="bg-[#222222] rounded-xl p-8 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+      <div className="bg-[#222222] rounded-xl p-8 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300" data-aos="fade-up">
         <div className="flex items-center mb-6">
           <div className="w-1 h-8 bg-[#FFD600] rounded mr-4"></div>
           <h2 className="text-2xl font-bold text-white">Project Statistics</h2>
