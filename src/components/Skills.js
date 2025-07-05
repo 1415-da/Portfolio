@@ -70,7 +70,7 @@ const Skills = () => {
             key={group} 
             className="bg-[#222222] rounded-xl p-4 md:p-6 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300"
             data-aos="fade-up"
-            data-aos-delay={index * 100}
+            data-aos-delay={0}
           >
             <div className="flex items-center mb-4 md:mb-6">
               <div className="w-10 h-10 md:w-12 md:h-12 bg-[#FFD600] rounded-lg flex items-center justify-center mr-3 md:mr-4">
