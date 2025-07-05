@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const skills = [
   { name: "Python", group: "Languages & Databases" },
@@ -29,7 +29,6 @@ const skills = [
   { name: "Web Scrapping", group: "Other Skills" },
   { name: "Data Analysis", group: "Other Skills" },
   { name: "Data Visualization", group: "Other Skills" },
-  
 ];
 
 const grouped = skills.reduce((acc, skill) => {
@@ -38,28 +37,63 @@ const grouped = skills.reduce((acc, skill) => {
   return acc;
 }, {});
 
-export default function Skills() {
+const groupIcons = {
+  "Languages & Databases": (
+    <svg className="w-5 h-5 md:w-6 md:h-6 text-[#131313]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+    </svg>
+  ),
+  "Visualization Tools": (
+    <svg className="w-5 h-5 md:w-6 md:h-6 text-[#131313]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>
+  ),
+  "AI": (
+    <svg className="w-5 h-5 md:w-6 md:h-6 text-[#131313]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+  ),
+  "Other Skills": (
+    <svg className="w-5 h-5 md:w-6 md:h-6 text-[#131313]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+    </svg>
+  )
+};
+
+const Skills = () => {
   return (
-    <section id="skills" className="group w-full min-h-screen flex flex-col justify-center items-center px-4 py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-      <h2 className="section-title group-hover:animate-title text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
-      <div className="w-full flex flex-col items-center">
-        <div className="grid grid-cols-1 gap-8 pb-4 w-full md:flex md:flex-row md:gap-8 md:justify-center md:items-start md:overflow-x-auto md:pb-0">
-          {Object.keys(grouped).map((group, groupIdx) => (
-            <div key={group} className="mb-2 w-full md:w-80 bg-gray-800 rounded-2xl p-6 shadow-lg border-2 border-gray-700 transition-transform duration-300 hover:scale-105 hover:-translate-y-2 hover:border-blue-400 animate-float text-center" style={{ animationDelay: `${(groupIdx % 4) * 0.15}s` }}>
-              <h3 className="text-xl font-semibold text-white mb-4 text-center">{group}</h3>
-              <div className="max-h-56 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-blue-50 px-1">
-                <div className="flex flex-wrap justify-center gap-2">
-                  {grouped[group].map((skill) => (
-                    <div key={skill.name} className="bg-gray-700 text-gray-200 rounded-full px-4 py-1 text-sm font-medium">
-                      {skill.name}
-                    </div>
-                  ))}
-                </div>
+    <div className="space-y-6 md:space-y-8">
+      {/* Skills Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        {Object.keys(grouped).map((group, index) => (
+          <div 
+            key={group} 
+            className="bg-[#222222] rounded-xl p-4 md:p-6 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div className="flex items-center mb-4 md:mb-6">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-[#FFD600] rounded-lg flex items-center justify-center mr-3 md:mr-4">
+                {groupIcons[group]}
               </div>
+              <h3 className="text-lg md:text-xl font-bold text-white">{group}</h3>
             </div>
-          ))}
-        </div>
+            
+            <div className="grid grid-cols-2 gap-2">
+              {grouped[group].map((skill) => (
+                <div 
+                  key={skill.name} 
+                  className="bg-[#181818] text-[#B0B0B0] rounded-lg px-2 md:px-3 py-2 text-xs md:text-sm font-medium border border-[#333333] hover:border-[#FFD600]/30 transition-colors duration-200"
+                >
+                  {skill.name}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Skills;
