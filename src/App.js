@@ -37,28 +37,16 @@ function App() {
   };
 
   useEffect(() => {
-    // Add a small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      updateSliderPosition(activeSection);
-    }, 100);
-    
-    return () => clearTimeout(timer);
+    updateSliderPosition(activeSection);
   }, [activeSection]);
 
   useEffect(() => {
-    // Initial position with delay
-    const timer = setTimeout(() => {
-      updateSliderPosition(activeSection);
-    }, 100);
-    
-    // Update on window resize
+    updateSliderPosition(activeSection);
     const handleResize = () => {
-      setTimeout(() => updateSliderPosition(activeSection), 100);
+      updateSliderPosition(activeSection);
     };
     window.addEventListener('resize', handleResize);
-    
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
