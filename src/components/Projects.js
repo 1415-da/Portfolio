@@ -70,17 +70,48 @@ const projects = [
   },
 ];
 
-export default function Projects() {
+const Projects = ({ hideDescriptionOnMobile = false }) => {
   return (
-    <section id="projects" className="group w-full min-h-screen flex flex-col justify-center items-center px-8 py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-      <div className="w-full max-w-6xl">
-        <h2 className="section-title group-hover:animate-title text-3xl font-bold text-white mb-8 text-center">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-4 md:pb-0">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
+    <div className="space-y-8">
+      {/* Projects Grid - Single column on mobile, multi-column on larger screens */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 group/3d-border">
+        {projects.map((project) => (
+          <ProjectCard 
+            key={project.title} 
+            {...project} 
+            hideDescriptionOnMobile={hideDescriptionOnMobile}
+          />
+        ))}
+      </div>
+
+      {/* Project Stats */}
+      <div className="bg-[#222222] rounded-xl p-8 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div className="flex items-center mb-6">
+          <div className="w-1 h-8 bg-[#FFD600] rounded mr-4"></div>
+          <h2 className="text-2xl font-bold text-white">Project Statistics</h2>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#FFD600] mb-2">6</div>
+            <div className="text-[#B0B0B0] text-sm">Total Projects</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#FFD600] mb-2">4</div>
+            <div className="text-[#B0B0B0] text-sm">Live Demos</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#FFD600] mb-2">15+</div>
+            <div className="text-[#B0B0B0] text-sm">Technologies Used</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#FFD600] mb-2">100%</div>
+            <div className="text-[#B0B0B0] text-sm">Open Source</div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
-} 
+};
+
+export default Projects; 
