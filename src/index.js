@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-AOS.init({ once: true, duration: 800, easing: 'ease-in-out' });
+AOS.init({ once: true, duration: 400, easing: 'ease-in-out' });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
