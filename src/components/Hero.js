@@ -1,43 +1,125 @@
-import React from "react";
-// Place your avatar image in src/assets/avatar.png and update the import if needed
-import avatar from "../assets/avatar.png";
+import React from 'react';
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <section className="group flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-20 md:py-32 fade-in bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-      <div className="max-w-xl text-center md:text-left flex-1">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Hi, I'm <span className="text-gray-300 group-hover:animate-title">Kumar Gaurav</span>
-        </h1>
+    <div className="space-y-8">
+      {/* Education Section */}
+      <div className="bg-[#1f1f1f] rounded-xl p-4 md:p-8 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300" data-aos="fade-up">
+        <div className="flex items-center mb-6 md:mb-8">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-[#FFD600] rounded-lg flex items-center justify-center mr-3 md:mr-4">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-[#1f1f1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h2 className="text-xl md:text-2xl font-bold text-[#f5f5f5]">Education</h2>
+        </div>
         
-        <p className="text-lg text-gray-300 mb-2">
-        Driven and detail-oriented Computer Science student with a passion for transforming complex problems into elegant data-driven solutions. A fast learner who thrives in collaborative environments, eagerly embracing new challenges and continuously sharpening skills through self-directed learning and innovative projects.
-        </p>
-        <p className="text-lg text-gray-300 mb-6">
-          Actively building personal projects and improving coding skills through online courses and challenges.
-        </p>
-        <a
-          href="#projects"
-          className="inline-block px-8 py-3 bg-gradient-to-r from-white via-gray-300 to-gray-500 text-gray-900 font-bold rounded-xl shadow-lg hover:from-gray-700 hover:to-gray-900 hover:text-white hover:scale-105 transition-all duration-300 border-2 border-gray-700"
-        >
-          View Projects
-        </a>
-      </div>
-      <div className="flex justify-center items-center flex-1 relative group">
-        <img 
-          src={avatar} 
-          alt="Kumar Gaurav profile photo" 
-          className="w-80 h-80 md:w-[26rem] md:h-[26rem] rounded-full shadow-2xl border-4 border-blue-200 object-cover ring-4 ring-blue-100 transition-transform duration-300 group-hover:opacity-0 bg-transparent cursor-pointer" 
-        />
-        <div className="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <img 
-            src={avatar} 
-            alt="Full Kumar Gaurav profile" 
-            className="w-[32rem] h-[32rem] md:w-[38rem] md:h-[38rem] rounded-2xl shadow-2xl border-4 border-blue-200 object-contain bg-transparent" 
-            style={{boxShadow: '0 8px 32px rgba(0,0,0,0.25)'}}
-          />
+        <div className="relative">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-3 md:left-5 top-0 bottom-0 w-0.5 bg-[#FFD600]"></div>
+          
+          {/* Education Item */}
+          <div className="relative pl-12 md:pl-16 pb-6 md:pb-8">
+            {/* Timeline Dot */}
+            <div className="absolute left-1 md:left-3 top-2 w-3 h-3 md:w-4 md:h-4 bg-[#FFD600] rounded-full border-2 md:border-4 border-[#1f1f1f]"></div>
+            
+            <div className="bg-[#181818] rounded-lg p-4 md:p-6 border border-[#333333] hover:border-[#FFD600]/30 transition-all duration-300 hover:shadow-lg">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2 md:gap-0">
+                <h3 className="text-base md:text-lg font-bold text-[#f5f5f5]">CMR Institute of Technology</h3>
+                <span className="text-[#FFD600] text-xs md:text-sm font-semibold bg-[#FFD600]/10 px-2 md:px-3 py-1 rounded-full self-start">2023 - 2027</span>
+              </div>
+              <p className="text-[#f5f5f5] font-semibold text-sm mb-2">Bachelor of Technology in Computer Science</p>
+              <p className="text-[#B0B0B0] text-sm mb-2">Bangalore, India</p>
+              <p className="text-[#B0B0B0] text-sm leading-relaxed">
+                Focus: Data Science, Machine Learning, Full Stack Development, Software Engineering
+              </p>
+            </div>
+          </div>
+          
+          {/* Add more education items here if needed */}
         </div>
       </div>
-    </section>
+
+      {/* Certifications Section */}
+      <div className="bg-[#1f1f1f] rounded-xl p-4 md:p-8 shadow-lg border border-[#333333] hover:border-[#FFD600] transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div className="flex items-center mb-6 md:mb-8">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-[#FFD600] rounded-lg flex items-center justify-center mr-3 md:mr-4">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-[#1f1f1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h2 className="text-xl md:text-2xl font-bold text-[#f5f5f5]">Certifications</h2>
+        </div>
+
+        <div className="relative">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-3 md:left-5 top-0 bottom-0 w-0.5 bg-[#FFD600]"></div>
+          
+          <div className="space-y-4 md:space-y-6">
+            {/* Certification Item 1 */}
+            <div className="relative pl-12 md:pl-16">
+              {/* Timeline Dot */}
+              <div className="absolute left-1 md:left-3 top-2 w-3 h-3 md:w-4 md:h-4 bg-[#FFD600] rounded-full border-2 md:border-4 border-[#1f1f1f]"></div>
+              
+              <div className="bg-[#181818] rounded-lg p-4 md:p-6 border border-[#333333] hover:border-[#FFD600]/30 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2 md:gap-0">
+                  <h3 className="text-base md:text-lg font-bold text-[#f5f5f5] group-hover:text-[#FFD600] transition-colors duration-300">Become SQL Champion</h3>
+                  <span className="text-[#FFD600] text-xs md:text-sm font-semibold bg-[#FFD600]/10 px-2 md:px-3 py-1 rounded-full self-start">Apr 2025</span>
+                </div>
+                <p className="text-[#B0B0B0] text-sm mb-2 font-medium">Udemy</p>
+                <p className="text-[#B0B0B0] text-sm leading-relaxed">Advanced SQL programming and database management techniques</p>
+              </div>
+            </div>
+            
+            {/* Certification Item 2 */}
+            <div className="relative pl-12 md:pl-16">
+              {/* Timeline Dot */}
+              <div className="absolute left-1 md:left-3 top-2 w-3 h-3 md:w-4 md:h-4 bg-[#FFD600] rounded-full border-2 md:border-4 border-[#1f1f1f]"></div>
+              
+              <div className="bg-[#181818] rounded-lg p-4 md:p-6 border border-[#333333] hover:border-[#FFD600]/30 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2 md:gap-0">
+                  <h3 className="text-base md:text-lg font-bold text-[#f5f5f5] group-hover:text-[#FFD600] transition-colors duration-300">Deloitte Australia - Data Analytics</h3>
+                  <span className="text-[#FFD600] text-xs md:text-sm font-semibold bg-[#FFD600]/10 px-2 md:px-3 py-1 rounded-full self-start">Apr 2025</span>
+                </div>
+                <p className="text-[#B0B0B0] text-sm mb-2 font-medium">Forage</p>
+                <p className="text-[#B0B0B0] text-sm leading-relaxed">Data analytics and business intelligence fundamentals</p>
+              </div>
+            </div>
+            
+            {/* Certification Item 3 */}
+            <div className="relative pl-12 md:pl-16">
+              {/* Timeline Dot */}
+              <div className="absolute left-1 md:left-3 top-2 w-3 h-3 md:w-4 md:h-4 bg-[#FFD600] rounded-full border-2 md:border-4 border-[#1f1f1f]"></div>
+              
+              <div className="bg-[#181818] rounded-lg p-4 md:p-6 border border-[#333333] hover:border-[#FFD600]/30 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2 md:gap-0">
+                  <h3 className="text-base md:text-lg font-bold text-[#f5f5f5] group-hover:text-[#FFD600] transition-colors duration-300">Goldman Sachs Software Engineering</h3>
+                  <span className="text-[#FFD600] text-xs md:text-sm font-semibold bg-[#FFD600]/10 px-2 md:px-3 py-1 rounded-full self-start">Feb 2025</span>
+                </div>
+                <p className="text-[#B0B0B0] text-sm mb-2 font-medium">Goldman Sachs</p>
+                <p className="text-[#B0B0B0] text-sm leading-relaxed">Software engineering principles and best practices</p>
+              </div>
+            </div>
+            
+            {/* Certification Item 4 */}
+            <div className="relative pl-12 md:pl-16">
+              {/* Timeline Dot */}
+              <div className="absolute left-1 md:left-3 top-2 w-3 h-3 md:w-4 md:h-4 bg-[#FFD600] rounded-full border-2 md:border-4 border-[#1f1f1f]"></div>
+              
+              <div className="bg-[#181818] rounded-lg p-4 md:p-6 border border-[#333333] hover:border-[#FFD600]/30 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2 md:gap-0">
+                  <h3 className="text-base md:text-lg font-bold text-[#f5f5f5] group-hover:text-[#FFD600] transition-colors duration-300">Python Programming Masterclass</h3>
+                  <span className="text-[#FFD600] text-xs md:text-sm font-semibold bg-[#FFD600]/10 px-2 md:px-3 py-1 rounded-full self-start">Dec 2023</span>
+                </div>
+                <p className="text-[#B0B0B0] text-sm mb-2 font-medium">Udemy</p>
+                <p className="text-[#B0B0B0] text-sm leading-relaxed">Python programming fundamentals and advanced concepts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Hero;
